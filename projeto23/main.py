@@ -81,7 +81,8 @@ while i < num_linhas:  # Alterado de `<=` para `<`
         else:
             apropriacao = "5036"
             conta = "501"
-    
+    eles:
+         break 
     pt.write(apropriacao)
     pt.press('tab')
 
