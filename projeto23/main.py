@@ -7,19 +7,19 @@ data_venc = str(input("Digite a data de venc: "))
 fornecedor = str(input("Fornecedor: "))
 
 pt.FAILSAFE = True  # Mover para canto superior esquerdo
-df = pd.read_excel("projeto23/Planilha.xlsx")  # Corrigi a barra invertida
+df = pd.read_excel("projeto23/Planilha_p.xlsx")  # Corrigi a barra invertida
 
 # Conta o número de linhas
 num_linhas = df.shape[0]
 
 os.system('start notepad')  # Apenas para testes
-time.sleep(0.1)
+time.sleep(0.5)
 
 i = 0
 while i < num_linhas:  # Alterado de `<=` para `<`
     valorID = df.loc[i, "ID"]
-    valorVAL = df.loc[i, "VALOR"]
-    valorDATA = df.loc[i, "Emissão"]
+    valorVAL = df.loc[i, "Total Prestação"]
+    valorDATA = pd.to_datetime(df.loc[i, "Emissão"]).strftime("%d/%m/%Y")
     valorPROP = df.loc[i, "PROP"]
 
     # Primeira parte do lançamento
@@ -81,8 +81,9 @@ while i < num_linhas:  # Alterado de `<=` para `<`
         else:
             apropriacao = "5036"
             conta = "501"
-    eles:
-         break 
+    else:
+        print("Fornecedor não reconhecido")
+        break 
     pt.write(apropriacao)
     pt.press('tab')
 
