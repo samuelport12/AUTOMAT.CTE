@@ -7,7 +7,7 @@ data_venc = str(input("Digite a data de venc: "))
 fornecedor = str(input("Fornecedor: "))
 
 pt.FAILSAFE = True  # Mover para canto superior esquerdo
-df = pd.read_excel("projeto23/Planilha_p.xlsx")  # Corrigi a barra invertida
+df = pd.read_excel("projeto23/Planilha_p.xlsx") 
 
 # Conta o número de linhas
 num_linhas = df.shape[0]
@@ -16,7 +16,7 @@ os.system('start notepad')  # Apenas para testes
 time.sleep(0.5)
 
 i = 0
-while i < num_linhas:  # Alterado de `<=` para `<`
+while i < num_linhas: 
     valorID = df.loc[i, "ID"]
     valorVAL = df.loc[i, "Total Prestação"]
     valorDATA = pd.to_datetime(df.loc[i, "Emissão"]).strftime("%d/%m/%Y")
