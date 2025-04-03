@@ -30,7 +30,7 @@ while i < num_linhas:
     pt.write('1')
     pt.press('tab')
 
-    pt.write('221')
+    pt.write(fornecedor)
     pt.press('tab')
 
     pt.write(f'{valorDATA}')
